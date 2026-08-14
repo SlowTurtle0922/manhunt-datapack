@@ -1,5 +1,5 @@
 #help players to know how to start the game
-execute if entity @a[tag=] run function manhunt:welcome
+execute as @a[tag=] run function manhunt:welcome
 tag @a[tag=] add in_game
 
 #check if the game has started
