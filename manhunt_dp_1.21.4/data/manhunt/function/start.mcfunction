@@ -4,6 +4,7 @@ scoreboard objectives remove start
 
 #set world spawn point
 execute at @a[team=runner,limit=1] run summon armor_stand ~ ~ ~ {CustomName:'"World spawn point"'}
+execute at @e[name="World spawn point"] run forceload add ~ ~
 
 #check if player is dead
 scoreboard objectives add is_dead deathCount
