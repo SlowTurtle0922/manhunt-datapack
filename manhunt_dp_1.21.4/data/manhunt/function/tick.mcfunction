@@ -1,3 +1,7 @@
+#help players to know how to start the game
+execute if entity @a[tag=] run function manhunt:welcome
+tag @a[tag=] add in_game
+
 #check if the game has started
 scoreboard players enable @a start
 execute as @a[scores={start=1}] run function manhunt:start
