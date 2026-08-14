@@ -1,7 +1,6 @@
 {
     "pack": {
-        "description": "manhunt-datapack-1.21.4",
-        "pack_format": 81,
-        "supported_formats": [48, 81]
+        "description": "manhunt_datapack_1.21.4_v1",
+        "pack_format": 61,
     }
 }
