@@ -12,3 +12,8 @@ execute at @e[name="World spawn point"] run forceload add ~ ~
 #check if player is dead
 scoreboard objectives add is_dead deathCount
 scoreboard players set @a is_dead 0
+
+#check runners position
+scoreboard objectives add runner_x dummy
+scoreboard objectives add runner_y dummy
+scoreboard objectives add runner_z dummy
