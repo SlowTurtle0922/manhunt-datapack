@@ -3,7 +3,7 @@ gamerule keepInventory false
 gamemode survival @a[scores={is_dead=0}]
 
 #let compass point to runner
-execute at @a[team=runner,limit=1,gamemode=survival] run setworldspawn ~ ~ ~
+execute as @a[team=hunter] at @s if dimension minecraft:overworld at @a[team=runner,limit=1,gamemode=survival,sort=nearest] run setworldspawn ~ ~ ~
 
 #protect the true world spawn point and kill fake ones
 kill @e[name="World spawn point",tag=!world_spawn_point]
