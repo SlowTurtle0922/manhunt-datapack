@@ -18,6 +18,11 @@ execute as @a[team=hunter,scores={is_dead=1}] run scoreboard players set @s is_d
 #if hunter has no compass, give them a new one
 execute as @a[team=hunter] unless items entity @s container.* compass unless items entity @s player.cursor compass unless items entity @s weapon.offhand compass unless items entity @s player.crafting.* compass run give @s minecraft:compass 1
 
+#update compass
+#execute as @a[team=hunter] if items entity @s weapon.mainhand compass at @s in minecraft:overworld run item replace entity @s weapon.mainhand with minecraft:compass
+#execute as @a[team=hunter] if items entity @s weapon.mainhand compass at @s in minecraft:the_nether if data entity @a[limit=1,team=runner,sort=nearest] enteredNetherPosition run function manhunt:update_compass_in_the_nether
+#execute as @a[team=hunter] if items entity @s weapon.mainhand compass at @s in minecraft:the_end run function manhunt:update_compass_in_the_end
+
 #runner win
 execute if entity @a[team=runner,advancements={end/kill_dragon=true}] run function manhunt:runner_win
 

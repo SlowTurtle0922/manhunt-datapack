@@ -1,0 +1,1 @@
+#item replace entity @s weapon.mainhand with minecraft:compass[lodestone_tracker={target:{dimension:"minecraft:the_end",pos:[0,0,0]},tracked:false}]
