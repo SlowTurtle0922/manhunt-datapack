@@ -1,7 +1,7 @@
 #start the game
 scoreboard players set @a is_game_started 1
 scoreboard objectives remove start
-title @a title "Game Start!"
+title @a title {"text":"Game Start!","color":"yellow"}
 
 #set world spawn point
 kill @e[name="World spawn point"]
