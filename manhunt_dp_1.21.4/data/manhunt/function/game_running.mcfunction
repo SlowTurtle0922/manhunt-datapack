@@ -3,10 +3,16 @@ gamerule keepInventory false
 gamemode survival @a[scores={is_dead=0}]
 
 #let compass point to runner
-execute at @a[team=runner,limit=1] run setworldspawn ~ ~ ~
+execute at @a[team=runner,limit=1,gamemode=survival] run setworldspawn ~ ~ ~
+
+#protect the true world spawn point and kill fake ones
+kill @e[name="World spawn point",tag=!world_spawn_point]
+execute at @e[name="World spawn point",type=armor_stand,tag=world_spawn_point] run summon armor_stand ~ ~ ~ {CustomName:'"World spawn point"'}
+kill @e[tag=world_spawn_point]
+tag @e[name="World spawn point"] add world_spawn_point
 
 #respawn hunters
-execute as @a[team=hunter,scores={is_dead=1}] unless data entity @s SpawnX run tp @e[name="World spawn point",limit=1]
+execute as @a[team=hunter,scores={is_dead=1}] unless data entity @s SpawnX run tp @e[name="World spawn point",limit=1,type= armor_stand]
 execute as @a[team=hunter,scores={is_dead=1}] run scoreboard players set @s is_dead 0
 
 #if hunter has no compass, give them a new one

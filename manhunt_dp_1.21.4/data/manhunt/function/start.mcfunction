@@ -6,6 +6,7 @@ title @a title "Game Start!"
 #set world spawn point
 kill @e[name="World spawn point"]
 execute at @a[team=runner,limit=1] run summon armor_stand ~ ~ ~ {CustomName:'"World spawn point"'}
+tag @e[name="World spawn point"] add world_spawn_point
 execute at @e[name="World spawn point"] run forceload add ~ ~
 
 #check if player is dead
